@@ -6,7 +6,7 @@
 
 using namespace std;
 
-int doubler(int = 90);
+int doubler(int = 90); //referenciar a função
 
 int main()
 {
