@@ -8,7 +8,7 @@ Gato ::Gato(int age)
 }
 int Gato::GetAge() 
 {
-	cout << "Idade do Cat: " << _age << "\n----------------------------\n";
+	cout << "Idade do Cat: " << _age << "\n----------------------------" << endl;
 	return _age;
 }
 

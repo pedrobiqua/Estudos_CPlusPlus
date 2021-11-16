@@ -10,10 +10,10 @@ int doubler(int = 90); //referenciar a função
 
 int main()
 {
-    Gato gato(15);
-    gato.GetAge();
+    Gato gato(12); //usando construtor
+    cout << gato.GetAge(); //usando get
 
-    int result = 0, input;
+    /*int result = 0, input;
     cout << "Enter a number between 0 and 10000 to double: ";
     cin >> input;
 
@@ -24,7 +24,7 @@ int main()
 
     cout << "\nBack from doubler . . . ";
     cout << "\nInput:" << input << " doubled: " << result << "\n";
-    cout << "--------------------------\n";
+    cout << "--------------------------\n";*/
     return 0;
 }
 
