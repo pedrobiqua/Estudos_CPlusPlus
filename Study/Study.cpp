@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include "Gato.h"
+#include "Rectangle.h"
 
 using namespace std;
 
@@ -10,9 +11,9 @@ int doubler(int = 90); //referenciar a função
 
 int main()
 {
-    cout << "Pedrooo" << endl;
-    Gato gato(12); //usando construtor
-    cout << gato.GetAge(); //usando get
+    //cout << "Pedrooo" << endl;
+    //Gato gato(12); //usando construtor
+    //cout << gato.GetAge(); //usando get
 
 
     /*int result = 0, input;
@@ -27,6 +28,22 @@ int main()
     cout << "\nBack from doubler . . . ";
     cout << "\nInput:" << input << " doubled: " << result << "\n";
     cout << "--------------------------\n";*/
+
+    //Primeiro incializar o retangulo
+    Rectangle MyRectangle(100, 20, 50, 80);
+
+    pedro: int Area = MyRectangle.GetArea();
+
+    cout << "Rectangle Area: " << Area << "\n";
+    cout << "Upper Left X Coordinate: ";
+    cout << MyRectangle.GetUpperLeft().GetX() << "\n";
+    cout << "Upper Left Y Coordinate: ";
+    cout << MyRectangle.GetUpperLeft().GetY() << "\n";
+    cout << "Upper Right X Coordinate: ";
+    cout << MyRectangle.GetUpperRight().GetX() << "\n";
+    cout << "Upper Right Y Coordinate: ";
+    cout << MyRectangle.GetUpperRight().GetY() << "\n";
+
     return 0;
 }
 
