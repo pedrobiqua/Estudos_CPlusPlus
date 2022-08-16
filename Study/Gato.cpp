@@ -25,3 +25,5 @@ void Gato::Meow()
 {
 	cout << "miauu \n";
 }
+
+Gato::~Gato(){}

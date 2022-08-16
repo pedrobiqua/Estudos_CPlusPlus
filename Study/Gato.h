@@ -7,6 +7,7 @@ public:
 	void Meow ();
 	void SetAge(int age);
 	int GetAge();
+	~Gato();
 private:
 	int _age;
 };
