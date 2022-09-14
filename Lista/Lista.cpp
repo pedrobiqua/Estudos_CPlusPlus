@@ -4,13 +4,13 @@
 #include "Node.h"
 #include "ListaNo.h"
 
-// Usando ponteiro
+// Usando apenas um ponteiro
 void inserirNoInicioLista(ListaNo* lista, int num);
 void inserir_no_fimLista(ListaNo* lista, int num);
 void inserir_no_meioLista(ListaNo* lista, int num, int ant);
 void imprimir_lista(ListaNo lista);
 
-// Usando Node**
+// Usando ponteiro para ponteiro
 void inserir_no_inicio(Node** lista, int num);
 void inserir_no_fim(Node** lista, int num);
 void inserir_no_meio(Node** lista, int num, int ant);
