@@ -5,6 +5,7 @@
 void ShowResults(int* a, int* b);
 void ShowBeforeOrAfterResult(int* a, int* b);
 void SwapNumber(int* a, int* b);
+void mudaposicao(int a, int b);
 
 int main()
 {
@@ -14,6 +15,14 @@ int main()
     int number = 2;
     int* a = &num;
     int* b = &number;
+
+    std::cout << num << '\n';
+    std::cout << number << '\n';
+
+    mudaposicao(num, number);
+
+    std::cout << num << '\n';
+    std::cout << number << '\n';
 
     ShowResults(a, b);
 }
@@ -32,7 +41,7 @@ void ShowResults(int *a, int *b) {
     ShowBeforeOrAfterResult(a, b);
 }
 
-void ShowBeforeOrAfterResult(int*a, int *b) {
+void ShowBeforeOrAfterResult(int *a, int *b) {
     
     std::cout << "[A]: " << *a << '\n';
     std::cout << "[B]: " << *b << '\n' << '\n';
@@ -44,6 +53,15 @@ void SwapNumber(int* a, int* b) {
     temp = *a;
     *a = *b;
     *b = temp;
+}
+
+void mudaposicao(int a, int b) {
+    int temp;
+    temp = b;
+    b = a;
+    a = temp;
+    std::cout << "Na funcao" << a << '\n';
+    std::cout << "Na funcao" << b << '\n';
 }
 
 //Usando ponteiros somente na função e demonstrando que foi mudado no num e number

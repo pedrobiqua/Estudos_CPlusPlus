@@ -7,5 +7,6 @@ public:
 	Node* inicio;
 	int tamanho;
 	ListaNo();
+	~ListaNo();
 };
 

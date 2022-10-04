@@ -4,3 +4,5 @@ ListaNo::ListaNo() {
 	this->inicio = nullptr;
 	this->tamanho = 0;
 }
+
+ListaNo::~ListaNo(){}

@@ -18,10 +18,10 @@ void imprimir_lista(Node* no);
 
 int main()
 {
-    std::cout << "Lista encadeada\n";
+    std::cout << "Lista simplesmente encadeada\n";
 	int opcao, valor, anterior;
 
-	// Exemplo abaixo usando a classe lista para organizar os nós, alem de não precisar ponteiro de ponteiro
+	// Exemplo abaixo usando a classe lista para organizar os nós, além de não precisar ponteiro de ponteiro
 	ListaNo lista;
 	do
 	{
