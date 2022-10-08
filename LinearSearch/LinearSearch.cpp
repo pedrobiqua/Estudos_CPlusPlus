@@ -6,13 +6,42 @@ using namespace std;
 
 int* LinSearch(int* array, int size, int value);
 
+//Generic Linear Search Using a Template
+/*
+template <class T>
+T* LinearSearch(T* teste, int size, T& value) {
+    T* endPoint;
+
+    endPoint = teste + size;
+    for (; teste != endPoint; teste++)
+    {
+        if ((*teste) == value)
+        {
+            return teste;
+        }
+    }
+
+    return NULL;
+}
+*/
+
+
 int main()
 {
     cout << "Linear Search" << '\n';
     int  num = 7;
     int* ptr_lista = &num;
-    LinSearch(ptr_lista, 5, 7);
-   
+
+    int* result = LinSearch(ptr_lista, 5, 0);
+    if (result)
+    {
+        std::cout << *result;
+    }
+    else
+    {
+        std::cout << "Resultado NULL" << '\n';
+    }
+    
 
 }
 
