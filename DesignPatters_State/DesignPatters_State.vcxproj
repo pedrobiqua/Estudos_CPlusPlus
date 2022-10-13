@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{2a8080f6-a7a3-4755-b1b7-88958d1798c2}</ProjectGuid>
-    <RootNamespace>AbstractFactory</RootNamespace>
+    <ProjectGuid>{b0e9cbc3-0fd2-4ff1-adf0-29c45ec66b40}</ProjectGuid>
+    <RootNamespace>DesignPattersState</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>DesignPatters_AbstractFactory</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,7 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AbstractFactory.cpp" />
+    <ClCompile Include="DesignPatters_State.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
