@@ -3,16 +3,20 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 // Reference: https://refactoring.guru/pt-br/design-patterns/state/cpp/example                //
+// Used for study pattern state                                                               //
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include <typeinfo>
+
+class Context;
 
 class State
 {
 protected:
 	Context* context_;
 public:
-	virtual ~State();
+	virtual ~State(){}
 
 	void set_Context(Context* context) 
 	{
@@ -23,15 +27,13 @@ public:
 	virtual void Handle2() = 0;
 };
 
-State::~State(){}
-
 class Context
 {
 public:
 	// TODO
 	Context(State* state) : state_(nullptr) 
 	{
-		
+		this->TransitionTo(state);
 	}
 	~Context() 
 	{
@@ -40,19 +42,68 @@ public:
 
 	void TransitionTo(State* state) 
 	{
-		std::cout << "Context: Transition to" << typeid(*state).name() << ".\n";
+		std::cout << "Context: Transition to [ " << typeid(*state).name() << " ].\n";
 		if (this->state_ != nullptr)
 		{
-
+			delete this->state_;
 		}
+
+		this->state_ = state;
+		this->state_->set_Context(this);
+	}
+
+	void Request1() {
+		this->state_->Handle1();
+	}
+
+	void Request2() {
+		this->state_->Handle2();
 	}
 
 private:
 	State* state_;
-
 };
+
+class ConcreteStateA : public State {
+public:
+	void Handle1() override;
+
+	void Handle2() override {
+		std::cout << "ConcreteStateA handles request2.\n";
+	}
+};
+
+class ConcreteStateB : public State {
+public:
+	void Handle1() override {
+		std::cout << "ConcreteStateB handles request1.\n";
+	}
+	void Handle2() override {
+		std::cout << "ConcreteStateB handles request2.\n";
+		std::cout << "ConcreteStateB wants to change the state of the context.\n";
+		this->context_->TransitionTo(new ConcreteStateA);
+	}
+};
+
+void ConcreteStateA::Handle1() {
+	{
+		std::cout << "ConcreteStateA handles request1.\n";
+		std::cout << "ConcreteStateA wants to change the state of the context.\n";
+
+		this->context_->TransitionTo(new ConcreteStateB);
+	}
+}
+
+void ClientCode() {
+	Context* context = new Context(new ConcreteStateA);
+	context->Request1();
+	context->Request2();
+	delete context;
+}
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    std::cout << "Design Patters - State" << '\n';
+	ClientCode();
+	return 0;
 }
